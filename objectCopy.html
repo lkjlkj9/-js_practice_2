@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const original = {
+  name: "Alice",
+  settings: {
+    theme: "dark",
+    languages: ["en", "ru"]
+  }
+};
+
+function deepClone(obj) {
+ 
+  if (obj === null || typeof obj !== "object") return obj;
+
+  const copy = Array.isArray(obj) ? [] : {};
+
+  for (let key in obj) {
+    copy[key] = deepClone(obj[key]);
+  }
+
+  return copy;
+}
+
+const copy = deepClone(original);
+
+copy.settings.theme = "light";
+copy.settings.languages.push("fr");
+
+console.log(original.settings.theme); 
+console.log(original.settings.languages);
+
+    </script>
+</body>
+</html>

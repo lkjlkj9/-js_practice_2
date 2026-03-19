@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let n = 6
+let calls = ['call', 'call', 'call', 'call', 'call', 'call', 'call', ]
+function createCounter(n) {
+
+        function counter(n) {
+                alert(n)
+        }
+
+    for (let i = 1; i <= calls.length; i++) {
+            counter(n)
+            n++
+        }
+    
+    
+
+}
+createCounter(n) 
+
+
+
+/** 
+ * const counter = createCounter(10)
+ * counter() // 10
+ * counter() // 11
+ * counter() // 12
+ */
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+

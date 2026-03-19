@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bookList</title>
+</head>
+<body>
+    <script>
+
+
+let bookList = [{title: 'Властелин колец', author: 'Дж.Р.Р. Толкин', genres: ['фэнтези', 'эпическое фэнтези', 'приключения'], isRead: false,}, 
+                {title: 'Дюна', author: 'Фрэнк Герберт', genres: ['научная фантастика', 'космическая опера'], isRead: false,}, 
+                {title: 'Оно', author: 'Стивен Кинг', genres: ['ужасы', 'триллер'], isRead: false,}, 
+                {title: 'Игра престолов', author: 'Джордж Мартин', genres: ['фэнтези', 'темное фэнтези', 'героическое фэнтези'], isRead: false,}]
+
+
+
+function getBooksByGenre(genre, arr) {
+    let list = bookList.filter(book => book.genres.includes(genre)).map(book => book.title);
+
+    return list.join('\n');
+}
+
+function markAsRead(title, arr) {
+    for (let book of arr) {
+        if (book.title == title) {
+            if (book.isRead == false){
+                book.isRead = true;
+                return 'Прочитано!'
+            }
+
+        }
+
+    }
+    return 'книга не найдена'
+} 
+
+
+console.log(getBooksByGenre('фэнтези', bookList));
+console.log(markAsRead('Властелин колец', bookList));
+console.log(bookList);
+
+
+    </script>
+</body>
+</html>
