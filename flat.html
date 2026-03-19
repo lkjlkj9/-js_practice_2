@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const nested = [1, [2, [3, [4]], 5], [6, [7, [8, [9]]]]];
+
+            function flat(arr, depth=1) {
+            return arr.reduce((acc, item) => {
+                if (Array.isArray(item) && depth > 1) {
+                return acc.concat(flat(item, depth - 1));
+                } else {
+                return acc.concat(item);
+                }
+            }, []);
+            }
+        
+
+        console.log(flat(nested, 3));
+
+    </script>
+</body>
+</html>

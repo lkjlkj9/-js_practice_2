@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-practice_2-1</title>
+</head>
+<body>
+    <script>
+
+let users = [{id: 12,  name:'Rose',  email:'rose@flowers',},
+            {id: 25,  name:'Iris',  email:'iris@flowers',}, 
+            {id: 34,  name:'Kolin',  email:'kolin@flowers',}, 
+            {id: 76,  name:'Kamelia',  email:'kamelia@flowers',}, ]
+function findUserById(arr, id) {
+return arr.find(person => person.id === id) || null
+}
+console.log(findUserById(users, 34));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        const products = [
+                { name: "Phone", category: "Electronics" },
+                { name: "TV", category: "Electronics" },
+                { name: "Jeans", category: "Clothing" },
+                { name: "T-shirt", category: "Clothing" },
+                { name: "Blender", category: "Home" }
+                ];
+
+
+        function countByCategory(products) {
+        const result = {};
+
+        products.forEach(product => {
+            const category = product.category;
+
+            if (result[category]) {
+            result[category]++;
+            } else {
+            result[category] = 1;
+            }
+        });
+
+        return result;
+        }
+console.log(countByCategory(products));
+
+
+
+    </script>
+</body>
+</html>

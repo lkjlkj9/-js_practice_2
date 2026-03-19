@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+const categories = {
+    name: "Electronics",
+    subcategories: [
+        {
+        name: "Phones",
+        subcategories: [
+            { name: "Smartphones", subcategories: [] },
+            { name: "Feature Phones", subcategories: [] }
+        ]
+        },
+        {
+        name: "Computers",
+        subcategories: [
+            { name: "Laptops", subcategories: [] },
+            { name: "Desktops", subcategories: [] }
+        ]
+        }
+    ]
+}
+
+function findCategory(name, tree) {
+
+  if (tree.name === name) {
+    return tree;
+  }
+
+  for (let sub of tree.subcategories) {
+    const result = findCategory(name, sub);
+    if (result) {
+      return result;
+    }
+  }
+
+  return null;
+}
+
+console.log(findCategory('Phones', categories));
+
+    </script>
+</body>
+</html>

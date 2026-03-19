@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS-practice_2-1</title>
+</head>
+<body>
+    <script>
+
+let shop = [{name:'Rose' , price: 250 ,category: 'flowers' ,}, 
+            {name: 'Piano', price: 120000, category: 'music',}, 
+            {name:'Iris' , price: 180, category: 'flowers',}, 
+            {name:'Tulip' , price: 90, category: 'flowers',},]
+
+ function getTotalPriceByCategory(category) {
+    return shop.filter(product => product.category === category).reduce((sum, product) => sum + product.price, 0)
+ }
+
+alert(getTotalPriceByCategory('flowers'));
+
+
+    </script>
+</body>
+</html>

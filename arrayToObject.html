@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const array = [
+    { name: 'width', value: 123 },
+    { name: 'height', value: 222 }
+    ];
+// {width: 123, height: 222}
+
+let newObj = array.reduce((acc, item) => {acc[item.name] = item.value; return acc}, {});
+
+console.log(newObj);
+
+
+
+
+
+    </script>
+</body>
+</html>
